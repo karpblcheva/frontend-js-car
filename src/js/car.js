@@ -8,16 +8,30 @@ let car = {
   passenger: true,
   passengers: [],
   put: function () {
-    return this.passengers.push(this.passenger);
+    var push = this.passengers.push(this.passenger)
+    if (push <= this.seats) {
+      return push;
+      }
+    else {
+      return this.passengers.pop();
+      }
   },
   land: function () {
     return this.passengers.pop();
   },
-  // drive: function(){
-  //   return 
-  // },
+  drive: function(newSpeed){
+//     if(this.passengers = []) {
+//       return this.speed; 
+//     }
+//     else { 
+//       if (newSpeed <= this.maxSpeed) {
+      return this.speed = newSpeed;
+//       }
+//       } 
+  },
 };
-car.put();
-car.land();
+
 console.log(car.put())
 console.log(car.passengers)
+console.log(car.drive(80))
+console.log(car.speed)
